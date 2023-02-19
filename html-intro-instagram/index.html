@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+
+        #title-instagram {
+            width: 100%;
+            height: 100%;
+            background-image: url('intro.png');
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            background-color: white;
+        }
+
+        #title-instagram:hover {
+            opacity: 0;
+            transition-duration: 0.5s;
+            filter: invert(1);
+        }
+
+        #guide {
+            width: 100%;
+            height: 40%;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title-instagram">
+    </div>
+    <div id="guide">
+    </div>
+    <script>
+        var title = document.getElementById("title-instagram");
+        var guide = document.getElementById('guide');
+        title.addEventListener('mouseover', function (event) {
+            setTimeout(function (event) {
+                console.log(event);
+                location.href = 'main.html';
+            }, 1000)
+        });
+    </script>
+</body>
+
+</html>

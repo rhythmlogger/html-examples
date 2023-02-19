@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.5/Tone.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+        }
+
+        table {
+            margin-top: 80px;
+            width: 400px;
+            height: auto;
+        }
+
+        tr {
+            width: 100%;
+        }
+
+        table,
+        tr,
+        td {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-collapse: collapse;
+            color: white;
+        }
+
+        .check-group {
+            background-color: rgba(0, 0, 0, 0.15);
+        }
+
+        .note-group {
+            height: 10px;
+        }
+
+        .button-group {
+            height: 80px;
+        }
+
+
+        .max-group {
+            height: 10px;
+            background-color: rgba(0, 0, 0, 0.25);
+        }
+
+        .button-group td {
+            width: 50px;
+            text-align: center;
+        }
+
+        #header {
+            width: 100%;
+            height: 5%;
+        }
+
+        #footer {
+            clear: both;
+            width: 100%;
+            text-align: center;
+            height: 5%;
+        }
+
+        #sheet-left {
+            width: 20%;
+            height: 90%;
+            float: left;
+        }
+
+
+        #result {
+            width: 80%;
+            height: 90%;
+            float: left;
+            background-color: black;
+            color: black;
+            overflow: hidden;
+        }
+
+        .currentKeyCode {
+            width: 2rem;
+            height: 4rem;
+            float: left;
+            color: white;
+            text-align: center;
+            border-radius: 0.5rem;
+            border: 1px solid white;
+        }
+
+
+        .keyNull {
+            background-color: black;
+        }
+
+        .col {
+            display: table-cell;
+            width: 90px;
+            height: 160px;
+            border: 1px solid white;
+        }
+
+
+
+        .empty {
+            display: hidden;
+            border: 1px solid black;
+        }
+
+        .margin-side {
+            margin-left: 45px;
+            margin-right: 45px;
+        }
+
+        .margin-top {
+            margin-top: 45px;
+        }
+
+        .margin- .ocatve {
+            position: relative;
+            background-color: chartreuse;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        <h1>Deemo Dream Theme </h1>
+    </div>
+    <div id="sheet-left">
+        <br> &nbsp; t u o a s h
+        <br> &nbsp; t u o a s h
+        <br> &nbsp; t u o a s h
+        <br> &nbsp; t u o a s h
+        <br> &nbsp;
+        <br> &nbsp; r u o a s h
+        <br> &nbsp; r u o a s h
+        <br> &nbsp; r u o a s h
+        <br> &nbsp; r u o a s h
+        <br> &nbsp;
+        <br> &nbsp; e u o a s h
+        <br> &nbsp; e u o a s h
+        <br> &nbsp; e u o a s h
+        <br> &nbsp; e u o a s h
+        <br>
+        <br> &nbsp; q u o a s h
+        <br> &nbsp; t u o a s h
+        <br> &nbsp; l k h f s a
+        <br> &nbsp; s - f - l -
+        <br>
+        <br>
+
+    </div>
+    <div id="result">
+
+    </div>
+    <div id="footer">
+        &copy; 32comma.github.io
+    </div>
+    <script>
+        var piano = document.getElementById('piano');
+        //61keys
+        var keyMap = {
+            "1": {
+                code: "C2"
+            },
+            "!": {
+                code: "C#2"
+            },
+            "2": {
+                code: "D2"
+            },
+            "@": {
+                code: "D#2"
+            },
+            "3": {
+                code: "E2"
+            },
+            "4": {
+                code: "F2"
+            },
+            "$": {
+                code: "F#2"
+            },
+            "5": {
+                code: "G2"
+            },
+            "%": {
+                code: "G#2"
+            },
+            "6": {
+                code: "A2"
+            },
+            "^": {
+                code: "A#2"
+            },
+            "7": {
+                code: "B2"
+            },
+            "8": {
+                code: "C3"
+            },
+            "*": {
+                code: "C#3"
+            },
+            "9": {
+                code: "D3"
+            },
+            "(": {
+                code: "D#3"
+            },
+            "0": {
+                code: "E3"
+            },
+            "q": {
+                code: "F3"
+            },
+            "Q": {
+                code: "F#3"
+            },
+            "w": {
+                code: "G3"
+            },
+            "W": {
+                code: "G#3"
+            },
+            "e": {
+                code: "A3"
+            },
+            "E": {
+                code: "A#3"
+            },
+            "r": {
+                code: "B3"
+            },
+            "t": {
+                code: "C4"
+            },
+            "T": {
+                code: "C#4"
+            },
+            "y": {
+                code: "D4"
+            },
+            "Y": {
+                code: "D#4"
+            },
+            "u": {
+                code: "E4"
+            },
+            "i": {
+                code: "F4"
+            },
+            "I": {
+                code: "F#4"
+            },
+            "o": {
+                code: "G4"
+            },
+            "O": {
+                code: "G#4"
+            },
+            "p": {
+                code: "A4"
+            },
+            "P": {
+                code: "A#4"
+            },
+            "a": {
+                code: "B4"
+            },
+            "s": {
+                code: "C5"
+            },
+            "S": {
+                code: "C#5"
+            },
+            "d": {
+                code: "D5"
+            },
+            "D": {
+                code: "D#5"
+            },
+            "f": {
+                code: "E5"
+            },
+            "g": {
+                code: "F5"
+            },
+            "G": {
+                code: "F#5"
+            },
+            "h": {
+                code: "G5"
+            },
+            "H": {
+                code: "G#5"
+            },
+            "j": {
+                code: "A5"
+            },
+            "J": {
+                code: "A#5"
+            },
+            "k": {
+                code: "B5"
+            },
+            "l": {
+                code: "C6"
+            },
+            "L": {
+                code: "C#6"
+            },
+            "z": {
+                code: "D6"
+            },
+            "Z": {
+                code: "D#6"
+            },
+            "x": {
+                code: "E6"
+            },
+            "c": {
+                code: "F6"
+            },
+            "C": {
+                code: "F#6"
+            },
+            "v": {
+                code: "G6"
+            },
+            "V": {
+                code: "Gs6"
+            },
+            "b": {
+                code: "A6"
+            },
+            "B": {
+                code: "A#6"
+            },
+            "n": {
+                code: "B6"
+            },
+            "m": {
+                code: "C7"
+            },
+        }
+        const synth = new Tone.PolySynth().toDestination();
+        var result = document.getElementById("result");
+        var sample = [];
+        const now = Tone.now();
+        document.addEventListener('keydown', function (event) {
+            console.log(event);
+            var keyName = event.key;
+            console.log(keyName);
+            try {
+                var keyCode = keyMap[`${keyName}`].code;
+                console.log(keyCode);
+            } catch (e) {
+                console.log(keyCode);
+                return;
+            }
+
+            synth.triggerAttackRelease(keyCode, "16n");
+            result.innerHTML += `<div class="currentKeyCode">${keyCode}<br>${keyName}</div>`;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Buffer Visualizer</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin-bottom: 0;
+
+        }
+
+        #info {
+            background-color: black;
+            border: 1px solid white;
+            color: white;
+            font-family: 'Hi Melody', 'Courier New', Courier, monospace;
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        html,
+        body {
+            background-color: black;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            color: white;
+        }
+
+        pre {
+
+            font-family: 'Hi Melody', cursive;
+        }
+
+        button {
+            width: 100%;
+            color: white;
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+            font-family: 'Hi Melody', cursive;
+            border: 0px;
+        }
+
+        #title {
+            background-color: blue;
+            border: 1rem solid blue;
+            margin: 0;
+        }
+
+        #sonud-box {
+            padding: 1rem;
+            margin: 1rem;
+        }
+
+        audio {
+            background-color: white;
+            margin: 1rem;
+        }
+
+        audio::-webkit-media-controls-panel {
+            background-color: white;
+        }
+
+
+        #sound-container {
+            background-color: black;
+            border: 1px solid white;
+        }
+
+        #result {
+            padding: 1rem;
+            margin: 1rem;
+            color: white;
+            border: 1px solid white;
+            font-family: 'Hi Melody', cursive;
+        }
+        h6{
+            margin-bottom:1rem;
+            color:blue;
+            font-size:1rem;
+        }
+    </style>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+
+</head>
+
+<body>
+    <div id="title">
+        <button onclick="run()">실행하겠다오~</button>
+    </div>
+    <div id="sound-container">
+        <div id="sound-box">
+
+            <audio id="audio" controls>
+                <source src="test.m4a" />
+            </audio>
+        </div>
+        <div id="info">
+            <h6>
+                AudioContext get Element
+            </h6>
+            <pre>
+            AudioContext {
+                baseLatency: 0.01, destination: AudioDestinationNode, currentTime: 0, sampleRate:
+                48000, listener:
+            }
+
+            // Stereo
+            var channels = 2;
+
+            // Create an empty two second stereo buffer at the
+            // sample rate of the AudioContext
+            var frameCount = audioCtx.sampleRate * 2.0;
+            var myArrayBuffer = audioCtx.createBuffer(channels, frameCount, audioCtx.sampleRate);
+
+         </pre>
+            <h6>
+                Console result how to print object innerHTML
+            </h6>
+            <pre>
+            document.getElementById(${element...id..target}).innerHTML = JSON.stringify(object);
+         </pre>
+        </div>
+        <div id="result">
+            dd
+        </div>
+    </div>
+    <script>
+        function run() {
+            var audioContextOutputElement = document.getElementById('audioContextOutput');
+            var audio = document.getElementById('audio');
+            console.log(audioContextOutputElement); // print impossible?
+            console.log(audio); //print impossible?
+            var audioContext = new AudioContext(audio);
+            console.log(audioContext);
+        }
+    </script>
+</body>
+
+</html>

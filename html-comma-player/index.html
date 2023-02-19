@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.png">
+    <title>Think in MU</title>
+
+    <script>
+        var song1Lyrics = `
+고가도로에 삐져나온 초록잎
+아마 이 도시에서 유일히
+적응 못한 낭만일 거야
+플라스틱 하나 없는
+우린 들어갈 수 없는 곳
+어기고 싶어 망치고 싶어
+하는 사람들투성이
+자주 보러 올게 꼭은 아니지만
+지켜보려 할게 시키지 않았지만
+또 놀러 올게 괜시리 눈물 나네
+너를 보러 또 올게
+따라오듯 하다 멈추는 고양이
+아마 이 도시에서 유일히
+자유로운 마음일 거야
+처음 느낌 그대로 남은 너
+요샌 자주 못보지만
+가장 때 묻지 않은
+그런 감정은 우리만의 것
+자주 보러 올게 꼭은 아니지만
+지켜보려 할게 시키지 않았지만
+또 놀러 올게 괜시리 눈물 나네
+너를 보러
+이건 내 혼잣말 네가 들어주기를
+널 생각하면 눈물 멈출 수 없어
+자주 보러 올게 꼭은 아니지만
+지켜보려 할게 시키지 않았지만
+또 놀러 올게 괜시리 눈물 나네
+이젠 정말 잘 있어
+
+소스: Musixmatch
+작사: Yerin Baek
+지켜줄게 See You Again 가사 © Jyp Publishing
+`;
+        var song2Lyrics = `
+​
+hello mr, my yesterday 
+랩 빨강
+보컬 파랑
+​
+hello mr, my yesterday
+전해주지 않을래
+꿈이 이뤄지는 그 때 꼭 다시 만나자고
+​
+미치도록 내달려도 앞이 보이지 않아
+덩그러니 홀로남겨져 길위에 털썩
+주저앉아 애써 눈물을 참으려 했어
+초라한 내가 싫어서.
+​
+정말 묻고 싶은 단 한가지
+만약 신이 내 곁에 있다면
+행복의 의미를 내게 가르쳐줘
+저마다의 길을 걸어가며
+제각각의 노래를 부르며
+날 부러워 한 My friend
+정작 내세울것 하나 없는 나지만
+이젠 돌아갈 곳조차도 없는
+내일의 이유도 찾아볼수 없어 내게선
+​
+hello mr, my yesterday  타임머신을 타고
+꿈을 쫓는 어제의 내게 전해야될 얘기
+희망을 말하는 그대여, 그대에게 비친
+내일을 찾아가는 나는 미소 짓고 있나요?
+​
+누구나 찾고 있어 히어로와 현실
+매일을 마주하는 현실의 벽 앞에
+누구나 엇갈리는 선택을 하고 살지
+저마다의 기준으로
+​
+에디슨이 반세기 뒤에
+만약 다시 태어나게 되면
+시간여행을 할 수 있을지도 몰라
+희망이라 나를 속여왔던
+슬픔의 균형을 잃고 나서
+이젠 설수도 없어
+저마다의 커져버린 꿈얘길
+하기 바쁜 동창회조차
+갈 수 없게 됐어 초라해진 나의 꿈으론
+​
+hello mr, my yesterday 타임머신을 타고
+미래의 나에게로 부디 내 얘기를 전해줘
+꿈을 놓아버린 그대여 시간이 흘러서
+나였었던 그대는 진정 웃을 수 있을까
+​
+이세상에 태어난 그 순간부터
+줄곧 이길을 달렸어
+너와 함께한 1분 1초 모든 흔적이
+내 삶의 증거야
+​
+hello mr, my yesterday
+hello mr, my yesterday
+​
+아침이 올 때마다 내가 나일 수 있도록
+내 곁을 지켜준 네게 내 삶을 약속해
+우리 마주잡은 두 손을 놓지마 날 믿어
+엇갈리게 살아온 우리는 어디를 향할까
+​
+hello mr, my yesterday 타임머신을 타고 
+꿈을 쫓는 어제의 내게 전해야될 얘기
+내 전부를 걸고 맹세할께 삶이 끝난다 해도
+꿈이 이뤄진 그때 너를 맞이하러 가겠어
+​
+내 전불 걸고서
+내 전불 걸고서
+​
+혹시나 내 목소리가 들리고 있다면
+끝까지 포기하지 않을 나니까 날 믿어
+난 포기하지 않아
+난 널 놓지 않아
+​
+hello mr, my yesterday
+hello mr, my yesterday
+​
+`;
+        
+
+        var song3Lyrics = `
+범 내려온다 범이 내려온다
+장림깊은 골로 대한 짐승이 내려온다
+몸은 얼숭덜숭 꼬리는 잔뜩 한 발이 넘고
+누에머리 흔들며
+전동같은 앞다리
+동아같은 뒷발로
+양 귀 찌어지고
+쇠낫같은 발톱으로 잔디뿌리 왕모래를
+촤르르르르 흩치며
+주홍 입 쩍 벌리고 워리렁 허는 소리
+하늘이 무너지고 땅이 툭 꺼지난 듯
+자래 정신없이 목을 움추리고
+가만이 엎졌것다
+범 내려온다 범이 내려온다
+송림 깊은 골로 한 짐생이 내려온다
+누에머리를 흔들며
+양 귀 쭉 찢어지고
+몸은 얼숭덜숭
+꼬리는 잔뜩
+한 발이 넘고
+동개같은 앞다리 전동같은 뒷다리
+새 낫 같은 발톱으로 엄동설한 백설격으로
+잔디 뿌리 왕모래 좌르르르르르르 흩이고
+주홍 입 쩍 벌리고 자라 앞에 가 우뚝 서
+홍앵앵앵 허는 소리 산천이 뒤덮고
+땅이 툭 꺼지난 듯
+자라가 깜짝 놀래
+목을 움치고 가만히 엎졌을 제
+범 내려온다 범이 내려온다
+송림 깊은 골로 한 짐생이 내려온다
+누에머리를 흔들며
+양 귀 쭉 찢어지고
+몸은 얼숭덜숭
+꼬리는 잔뜩
+범 내려온다 범이 내려온다
+범 내려온다 범이 내려온다
+송림 깊은 골로 한 짐생이 내려온다
+누에머리를 흔들며
+양 귀 쭉 찢어지고
+몸은 얼숭덜숭
+꼬리는 잔뜩 한 발이 넘고
+동개같은 앞다리 전동같은 뒷다리
+새 낫 같은 발톱으로 엄동설한 백설격으로
+잔디 뿌리 왕모래 좌르르르르르르 흩이고
+주홍 입 쩍 벌리고 자라 앞에 가 우뚝 서
+홍앵앵앵 허는 소리 산천이 뒤덮고
+땅이 툭 꺼지난 듯
+자라가 깜짝 놀래
+목을 움치고 가만히 엎졌을 제
+범 내려온다 범이 내려온다
+송림 깊은 골로 한 짐생이 내려온다
+누에머리를 흔들며
+양 귀 쭉 찢어지고
+몸은 얼숭덜숭
+꼬리는 잔뜩 한 발이 넘고
+동개같은 앞다리 전동같은 뒷다리
+새 낫 같은 발톱으로 엄동설한
+백설격으로 잔디 뿌리 왕모래
+좌르르르르르르 흩이고
+주홍 입 쩍 벌리고 자라 앞에 가 우뚝 서
+홍앵앵앵 허는 소리 산천이 뒤덮고
+땅이 툭 꺼지난 듯 자라가 깜짝 놀래
+목을 움치고 가만히 엎졌을 제
+범 내려온다 범이 내려온다
+송림 깊은 골로 한 짐생이 내려온다
+누에머리를 흔들며
+양 귀 쭉 찢어지고
+몸은 얼숭덜숭
+꼬리는 잔뜩
+범 내려온다 범이 내려온다
+`;
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100%;
+            background-image: url('bg.jpg');
+            background-repeat: no-repeat;
+            background-position-x: center;
+            background-position-y: center;
+            background-size: cover;
+            overflow: hidden;
+        }
+
+
+        #lyrics {
+            width: 400px;
+            height: 640px;
+            overflow-y: auto;
+            position: absolute;
+            right: 100px;
+            top: 200px;
+            overflow-x: hidden;
+            color: white;
+        }
+
+        #title-comma-player {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            opacity: 0;
+            background-color: black;
+        }
+
+        #playlist {
+            top: -65px;
+            transform: scale(0.85);
+            font-size: 0.75rem;
+            color: white;
+            width: 1440px;
+            height: 640px;
+            position: relative;
+            left: 20px;
+            border-radius: 10px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .entry {
+            width: 250px;
+            height: 135x;
+            padding: 15px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .entry>img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .song-title {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            background-color: rgba(0, 0, 0, 0.30);
+        }
+
+        .entry {
+            z-index: 50;
+            position: relative;
+            border-radius: 1rem;
+        }
+
+        .song-image {
+            width: 320px;
+            height: auto;
+            opacity: 0.5;
+        }
+
+        .song-image:hover {
+            opacity: 1;
+        }
+
+        #song-player {
+            background-color: white;
+            position: absolute;
+            bottom: 50px;
+            width: auto;
+            left: 40px;
+        }
+
+        .song-player-hr {
+            width: 1440px;
+            border-top: 1px solid white;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        #youtube {
+            display: inline-block;
+            position: relative;
+            left: 160px;
+            bottom: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title-comma-player">
+        <div id="playlist">
+            <div class="entry">
+                <a target="youtube" onclick="change(song1Lyrics);" href="https://www.youtube.com/embed/IDD5_z3kKCU"><img
+                        class="song-image" src="youtube/지켜줄게-백예린.webp"></a>
+            </div>
+            <div class="entry">
+                <a target="youtube" onclick="change(song2Lyrics);" href="https://www.youtube.com/embed/290wEeuNwYQ">
+                    <img class="song-image"
+                        src="youtube/명탐정 코난 10기 Op - Hello Mr. My Yesterday┃Raon Lee x E Hyuk.webp"></a>
+
+            </div>
+            <div class="entry">
+                <a target="youtube" onclick="change(song3Lyrics);" href="https://www.youtube.com/embed/SmTRaSg2fTQ"><img
+                        class="song-image" src="youtube/[온스테이지2.0] 이날치 - 범 내려온다(with 앰비규어스 댄스컴퍼니)-SmTRaSg2fTQ.webp"></a>
+            </div>
+        </div>
+        <div id="youtube">
+            <iframe width="960" name="youtube" height="640" src="https://www.youtube.com/embed/IDD5_z3kKCU"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </div>
+        <div id="lyrics">
+
+            </pre>
+        </div>
+
+        <script>
+            function change(lyrics) {
+                document.getElementById('lyrics').innerHTML = "<pre>" + lyrics + "</pre>";;
+            }
+        </script>
+        <script>
+            var title = document.getElementById("title-comma-player");
+            var guide = document.getElementById('guide');
+            title.addEventListener('mouseover', function (event) {
+                title.style.opacity = "1";
+                title.style.transitionDuration = "1s";
+                console.log(event);
+
+            });
+            title.addEventListener('mouseout', function (event) {
+                title.style.opacity = "0";
+                title.style.transitionDuration = "1s";
+                console.log(event);
+            });
+        </script>
+        <script>
+            window.addEventListener("wheel", e => e.preventDefault(), { passive: false })
+        </script>
+        <script>
+            document.getElementById('lyrics').innerHTML = "<pre>" + song1Lyrics + "</pre>";
+        </script>
+</body>
+
+</html>

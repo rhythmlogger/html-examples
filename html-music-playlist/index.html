@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                * {
+                        border: 0;
+                        box-shadow: none;
+                        outline: none;
+                        list-style: none;
+                        text-decoration: none;
+
+                        font-family: Lato, Helvetica;
+                }
+
+                html,
+                body {
+                        width: 90%;
+                        height: 90%;
+                        padding: 1%;
+                        background: linear-gradient(135deg, #f28, #4ae);
+                        background-attachment: fixed;
+                }
+
+                #left-section {
+                        width: 320px;
+                        height: 100%;
+                        padding-right: 40px;
+                        padding-top: 1rem;
+                        overflow-y: auto;
+                        text-align: left;
+                        float: left;
+                }
+
+                #right-section {
+                        padding-top: 40px;
+                        padding-left: 40px;
+                        width: 800px;
+                        float: left;
+                        height: 100%;
+                }
+
+
+                .button {
+                        display: inline-block;
+                        width: 320px;
+
+                        margin-bottom: 1em;
+
+                        cursor: pointer;
+
+                        background: rgba(0, 0, 0, 0.1);
+                        color: white;
+
+                        box-shadow: inset 2px 2px white, inset -2px -2px white, inset 2px -2px white, inset -2px 2px white;
+
+                        transition: background 0.2s linear, box-shadow 0.2s linear;
+                }
+
+                .button:last-of-type {
+                        margin-bottom: -1em !important;
+                }
+
+                .button:hover {
+                        background: rgba(0, 0, 0, 0.2) !important;
+                }
+
+                .button.playing {
+                        background: #e30097 !important;
+                }
+
+                .button.playing:hover {
+                        background: #4dbce9 !important;
+                }
+
+                .button.default {
+                        background: rgba(0, 0, 0, 0.1);
+                        color: white;
+
+                        box-shadow: inset 2px 2px white, inset -2px -2px white, inset 2px -2px white, inset -2px 2px white;
+                }
+
+                .button span {
+                        display: inline-block;
+
+                        padding: 1em 2em;
+
+                        font-size: 0.75rem;
+                }
+        </style>
+</head>
+
+<body>
+        <section id="left-section">
+                <article>
+                        <audio id="audio">
+                                <source id="source" />
+                        </audio>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/4OT8DYuni9Q"><span> 한번만더
+                                        - 나얼
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/JJkQ9TxCd_o"><span> 돌아가줘
+                                        - 브라운아이즈
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/I6sd5vAxkkg"><span> 너를 위해
+                                        - 임재범
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/JGqCsEoAWjg"><span> 언제나
+                                        그랬죠 - 브라운아이즈
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/gqdQy6pyCy4"><span> I
+                                        love you - 포지션
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/y7gCktBEn5U"><span> 커피 -
+                                        브라운아이즈
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/ANE5j1zUExU"><span> 점점 -
+                                        브라운아이즈
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/ydlmygcZWLA"><span> 꿈에 -
+                                        dosii
+                                </span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/SlVbNM1FMZo"><span>고유진 -
+                                        걸음이
+                                        느린아이</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/eAP5RZe-IDo"><span>DVWN -
+                                        괜찮아</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/Jp4-snWZuoI"><span>이승철 -
+                                        그런사람 또
+                                        없습니다</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/R6pVI4M_DZE"><span>넬 -
+                                        기억을 걷는
+                                        시간</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/Yc_b0Hsbdac"><span>노라조 -
+                                        도망간 내
+                                        여자친구를 소개합니다</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/g72-wPkw-To"><span>태연 -
+                                        만약에</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/hDzEA6CGG4U"><span>네메시스 -
+                                        베르사이유의
+                                        장미</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/yr332PkY7Wo"><span>유미 -
+                                        사랑은 언제나
+                                        목마르다</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/oKjT6LEOPxo"><span>백지영 -
+                                        잊지말아요</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/IDD5_z3kKCU"><span>백예린 -
+                                        지켜줄게</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/bT7P0HCTXzI"><span>크러쉬 -
+                                        Beautiful</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/ZHoLaLlL5lA"><span>지코 -
+                                        BERMUDA
+                                        TRIANGLE</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/Du3rcfI9hDY"><span>조용필 -
+                                        Bounce</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/eelfrHtmk68"><span>DEAN -
+                                        D</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/9xdbhI3pqxY"><span>Rabpit
+                                        - Deemo
+                                        Dream</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/HDnNVWTANgY"><span>플라워 -
+                                        Endless</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/t9KpdoSxVZU"><span>소유 - I
+                                        Miss
+                                        You</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/wKyMIrBClYw"><span>DEAN -
+                                        Instagram</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/CL34af5Y7cc"><span>dosii
+                                        - Love me
+                                        more</span></a>
+                        <a class="button" target="youtube"
+                                href="https://www.youtube.com/embed/2aBQOcZyTNg"><span>Electronic
+                                        Boutique - Miles</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/EAWHtXQpYX4"><span>백지영 -
+                                        No love
+                                        no more</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/QOpa9nFfMBA"><span>하현우 -
+                                        Pulse</span></a>
+                        <a class="button" target="youtube"
+                                href="https://www.youtube.com/embed/5CfszyKq2MY"><span>Electronic
+                                        Boutique - Secret</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/u2Dqub2Xnhc"><span>다비치 -
+                                        This
+                                        Love</span></a>
+                        <a class="button" target="youtube"
+                                href="https://www.youtube.com/embed/R8UAFE21BN4"><span>ColdPlay - Viva
+                                        La Vida</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/fqlStglcvII"><span>새소년 -
+                                        Wave</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/xyaKqWMpfIA"><span>T윤미래 -
+                                        Always</span></a>
+                        <a class="button" target="youtube" href="https://www.youtube.com/embed/gMrYfJGm7kM"><span>DEAN -
+                                        What to
+                                        do</span></a>
+
+                </article>
+        </section>
+        <section id="right-section">
+                
+                <iframe width="1280" height="720" name="youtube" src="https://www.youtube.com/embed/ydlmygcZWLA"
+                        frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </section>
+</body>
+
+</html>

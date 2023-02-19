@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table-form</title>
+    <style>
+        table,
+        tr,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: auto;
+            height: auto;
+            overflow: hidden;
+            margin: 0.3rem;
+            padding: 0.3rem;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="table">
+        <script>
+            var table = {
+                thead:
+                    ['sequence', 'key', 'value', 'tag'],
+                tbody:
+                    [
+                        {
+                            sequence: 1,
+                            key: '1234',
+                            tag: 'root',
+                            value: 'admin'
+                        },
+                        {
+                            sequence: 2,
+                            key: '2345',
+                            tag: 'manager',
+                            value: 'admin'
+                        },
+                        {
+                            sequence: 3,
+                            key: '3456',
+                            tag: 'developer',
+                            value: 'admin'
+                        },
+                        {
+                            sequence: 4,
+                            key: 'user',
+                            tag: 'client',
+                            value: 'guest'
+                        },
+                    ],
+                tfoot: {
+                    current: {
+                        sequence: 1
+                    }
+                }
+            };
+        </script>
+
+
+    </table>
+</body>
+
+</html>
